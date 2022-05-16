@@ -27,18 +27,18 @@ class ProductsRepository private constructor(
         client.enqueue(object : Callback<ProductsResponse> {
             override fun onResponse(call: Call<ProductsResponse>, response: Response<ProductsResponse>) {
                 if (response.isSuccessful) {
-                    val data = response.body()!!.data
+                    val data = response.body()!!.responsedata.postProducts
                     val productsList = ArrayList<ProductsEntity>()
                     appExecutors.diskIO.execute {
                         data.forEach { products_article ->
                             val isBookmarked = productsDao.isProductsBookmarked(products_article.productsName)
-                                val product = ProductsEntity(
-                                    products_article.id,
-                                    products_article.productsName,
-                                    products_article.weaponImageUrl,
-                                    isBookmarked
-                                )
-                                productsList.add(product)
+                            val product = ProductsEntity(
+                                products_article.id,
+                                products_article.productsName,
+                                products_article.productImageUrl,
+                                isBookmarked
+                            )
+                            productsList.add(product)
                         }
                         productsDao.deleteAll()
                         productsDao.insertProducts(productsList)
