@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">PEACEMINUSONE</string>
+
+    <!--Facebook Login -->
+    <string name="facebook_app_id">209651367120949</string>
+    <string name="fb_login_protocol_scheme">fb509856639685548</string>
+    <string name="title_activity_side_nav">SideNavActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="home_second">Home Second</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="store_desc"><b>peaceminusone</b> is a Korean clothing brand that began in 2016 under artist G-DRAGON from BIGBANG.
+        The brand was created with the help of his stylist Gee Eun and is an extension of G-DRAGON’spersona.
+        The logo for peaceminusone was first seen on his solo album COUP D’ETAT that was released back in 2013.
+        Not only does it look like a peace sign, it actually derives from combining the G and the D in his name.</string>
+    <string name="exhibition">The brand began its first creative experience with a limited exhibition in 2015 located in the Seoul
+        Museum of Art called peaceminusone: Beyond the Stage. The exhibition was created to show the world that G-DRAGON perceives and reflects upon human nature while also showing a perfect utopia as the world “peace” implies.
+        It also brought together both pop culture and modern art with collaborations between various artists and G-DRAGON, as well as various items from BIGBANG videos.</string>
+    <string name="productsname">Products Name</string>
+    <string name="home">products</string>
+    <string name="bookmark">bookmark</string>
+
+</resources>
+

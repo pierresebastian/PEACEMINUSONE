@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "460600399687",
+    "project_id": "peaceminusone-140e3",
+    "storage_bucket": "peaceminusone-140e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460600399687:android:97ca92b484a3f24783de62",
+        "android_client_info": {
+          "package_name": "com.example.peaceminusone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460600399687-chjv86kbhv1p55rfq7juq3luvji52qi3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.peaceminusone",
+            "certificate_hash": "c69dd705ca56786e8d50928e6462c6be36ec080e"
+          }
+        },
+        {
+          "client_id": "460600399687-jrjpbqecbmt1vcccj0rk4khm61c6v9h5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2mxpgZpUg_3mxV0JrPneuKCwyyVLFGSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460600399687-jrjpbqecbmt1vcccj0rk4khm61c6v9h5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
