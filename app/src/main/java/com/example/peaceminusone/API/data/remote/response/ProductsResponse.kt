@@ -4,18 +4,23 @@ package com.example.peaceminusone.API.data.remote.response
 import com.google.gson.annotations.SerializedName
 
 data class ProductsResponse (
-    @field:SerializedName("data")
-    val data : ArrayList<Products>,
+    @field:SerializedName("responsedata")
+    val responsedata : PostProducts,
+)
+
+data class PostProducts (
+    @field:SerializedName("feeds")
+    val postProducts : ArrayList<Products>,
 )
 
 data class Products(
-    @field:SerializedName("id")
+    @field:SerializedName("productId")
     val id : Int,
 
-    @field:SerializedName("name")
+    @field:SerializedName("productName")
     val productsName : String,
 
-    @field:SerializedName("imageUrl")
-    val weaponImageUrl : String,
+    @field:SerializedName("productImage")
+    val productImageUrl : String,
 )
 
