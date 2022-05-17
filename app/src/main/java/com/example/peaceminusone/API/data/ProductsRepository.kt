@@ -12,6 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
+import kotlin.collections.ArrayList
 
 class ProductsRepository private constructor(
     private val apiService: ApiServices,
@@ -24,21 +25,20 @@ class ProductsRepository private constructor(
     fun getHeadlineProducts(): LiveData<Result<List<ProductsEntity>>> {
         result.value = Result.Loading
         val client = apiService.getProducts()
-        client.enqueue(object : Callback<ProductsResponse> {
-            override fun onResponse(call: Call<ProductsResponse>, response: Response<ProductsResponse>) {
+        client.enqueue(object : Callback<ArrayList<ProductsResponse>> {
+            override fun onResponse(call: Call<ArrayList<ProductsResponse>>, response: Response<ArrayList<ProductsResponse>>) {
                 if (response.isSuccessful) {
-                    val data = response.body()!!.responsedata.postProducts
+                    val data = response.body()!!
                     val productsList = ArrayList<ProductsEntity>()
                     appExecutors.diskIO.execute {
                         data.forEach { products_article ->
                             val isBookmarked = productsDao.isProductsBookmarked(products_article.productsName)
-                            val product = ProductsEntity(
-                                products_article.id,
-                                products_article.productsName,
-                                products_article.productImageUrl,
-                                isBookmarked
-                            )
-                            productsList.add(product)
+                                val product = ProductsEntity(
+                                    products_article.productsName,
+                                    products_article.productsImageUrl,
+                                    isBookmarked
+                                )
+                                productsList.add(product)
                         }
                         productsDao.deleteAll()
                         productsDao.insertProducts(productsList)
@@ -46,7 +46,7 @@ class ProductsRepository private constructor(
                 }
             }
 
-            override fun onFailure(call: Call<ProductsResponse>, t: Throwable) {
+            override fun onFailure(call: Call<ArrayList<ProductsResponse>>, t: Throwable) {
                 result.value = Result.Error(t.message.toString())
             }
         })
