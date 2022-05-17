@@ -7,22 +7,20 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    tools:context=".activity.MainActivity">
+    tools:context=".HomeScreen">
 
-    <LinearLayout
+    <include layout="@layout/app_main_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <include
-            layout="@layout/app_main_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></include>
+        android:layout_marginTop="60dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.2"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -54,7 +52,5 @@
                 android:src="@drawable/aboutuskerenbanget" />
 
         </LinearLayout>
-
-
-    </LinearLayout>
+    </ScrollView>
 </FrameLayout>

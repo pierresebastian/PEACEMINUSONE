@@ -3,9 +3,11 @@ package com.example.peaceminusone
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.transition.TransitionManager
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageButton
-import androidx.appcompat.widget.Toolbar
+import android.widget.ImageView
 import com.example.peaceminusone.ui.allproducts.ProductActivity
 
 class HomeScreen : AppCompatActivity(), View.OnClickListener {
@@ -16,11 +18,8 @@ class HomeScreen : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-//        val toolBar: ImageView = findViewById(R.id.app_toolbar_main)
-//        setSupportActionBar(toolBar)
-
-        val toolbar: Toolbar = findViewById(R.id.app_toolbar_main)
-        toolbar.setOnClickListener(this)
+        val sideNav: ImageView = findViewById(R.id.side_nav)
+        sideNav.setOnClickListener(this)
 
         val item: ImageButton = findViewById(R.id.button_item)
         item.setOnClickListener(this)
@@ -28,21 +27,28 @@ class HomeScreen : AppCompatActivity(), View.OnClickListener {
         val archive: ImageButton = findViewById(R.id.button_archive)
         archive.setOnClickListener(this)
 
-
         val about: ImageButton = findViewById(R.id.button_about_us)
         about.setOnClickListener(this)
-
-
-
     }
 
     override fun onClick(v: View) {
         when (v.id) {
+            R.id.side_nav -> {
+                val mFragmentManager = supportFragmentManager
+                val mSideNavFragment = SideNavFragment()
 
-            R.id.app_toolbar_main -> {
+                val rootView: ViewGroup = findViewById(R.id.main_menu_layout)
+                val mFade: androidx.transition.Fade =
+                    androidx.transition.Fade(androidx.transition.Fade.IN)
+                TransitionManager.beginDelayedTransition(rootView, mFade)
 
+                mFragmentManager
+                    .beginTransaction()
+                    .add(R.id.main_menu_layout, mSideNavFragment,
+                        SideNavFragment::class.java.simpleName)
+                    .addToBackStack(null)
+                    .commit()
             }
-
             R.id.button_item -> {
                 val signInIntent = Intent(this@HomeScreen, ProductActivity::class.java)
                 startActivity(signInIntent)

@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiConfig {
 
-    val BASE_URL : String = "https://api.taggbox.com/api/v2/commerce/"
+    val BASE_URL : String = "https://shoppingcontent.googleapis.com/"
 
     fun getApiService(): ApiServices {
         val loggingInterceptor = HttpLoggingInterceptor()
