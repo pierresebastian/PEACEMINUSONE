@@ -14,7 +14,7 @@ class SectionsPagerAdapter internal constructor(activity: AppCompatActivity) : F
         if (position == 0) {
             bundle.putString(ProductsFragment.ARG_TAB, ProductsFragment.TAB_PRODUCTS)
         } else {
-            bundle.putString(ProductsFragment.ARG_TAB, ProductsFragment.TAB_BOOKMARK)
+            bundle.putString(ProductsFragment.ARG_TAB, ProductsFragment.TAB_WISHLIST)
         }
         fragment.arguments = bundle
         Log.e("Argument Section : ",fragment.toString())

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.peaceminusone.API.data.local.entity.ProductsEntity
-import com.example.peaceminusone.API.data.remote.response.Products
 import com.example.peaceminusone.R
 import com.example.peaceminusone.databinding.AdapterProductsBinding
 

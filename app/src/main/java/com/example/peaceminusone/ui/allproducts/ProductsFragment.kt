@@ -65,7 +65,7 @@ class ProductsFragment : Fragment() {
                     }
                 }
             })
-        } else if (tabName == TAB_BOOKMARK) {
+        } else if (tabName == TAB_WISHLIST) {
             viewModel.getBookmarkedSkins().observe(viewLifecycleOwner, { bookmarkedSkins ->
                 binding?.progressBar?.visibility = View.GONE
                 newsAdapter.submitList(bookmarkedSkins)
@@ -87,6 +87,6 @@ class ProductsFragment : Fragment() {
     companion object {
         const val ARG_TAB = "tab_name"
         const val TAB_PRODUCTS = "products"
-        const val TAB_BOOKMARK = "bookmark"
+        const val TAB_WISHLIST = "wishlist"
     }
 }

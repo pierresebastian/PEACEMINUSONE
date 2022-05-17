@@ -17,7 +17,7 @@ class ProductActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
         @StringRes
-        private val TAB_TITLES = intArrayOf(R.string.home, R.string.bookmark)
+        private val TAB_TITLES = intArrayOf(R.string.home, R.string.wishlist)
     }
     private lateinit var binding: ActivityProductsBinding
 
