@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.peaceminusone.ui.allproducts.ProductActivity
 
 class ArchiveActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,15 +35,15 @@ class ArchiveActivity : AppCompatActivity(), View.OnClickListener {
                 }
 
                 R.id.button_outerwear -> {
-                    val signInIntent = Intent(this@ArchiveActivity, OutwearActivity::class.java)
+                    val signInIntent = Intent(this@ArchiveActivity, ProductActivity::class.java)
                     startActivity(signInIntent)
                 }
                 R.id.button_bottom -> {
-                    val signInIntent = Intent(this@ArchiveActivity, BottomActivity::class.java)
+                    val signInIntent = Intent(this@ArchiveActivity, ProductActivity::class.java)
                     startActivity(signInIntent)
                 }
                 R.id.button_accessories -> {
-                    val signInIntent = Intent(this@ArchiveActivity, AccessoriesActivity::class.java)
+                    val signInIntent = Intent(this@ArchiveActivity, ProductActivity::class.java)
                     startActivity(signInIntent)
                 }
             }

@@ -42,7 +42,7 @@ class CreateProfile : AppCompatActivity(), View.OnClickListener {
            R.id.btn_submit -> {
                nama = findViewById(R.id.edt_email_login)
                password = findViewById(R.id.edt_pass_login)
-               nomortelp = findViewById(R.id.no_tlp)
+               nomortelp = findViewById(R.id.edt_no_login)
                val nama_text = nama.text.toString().trim()
                val password_text = password.text.toString().trim()
                val nomortelp_text = nomortelp.text.toString().trim()
