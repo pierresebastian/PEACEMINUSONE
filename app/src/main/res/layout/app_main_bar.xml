@@ -34,13 +34,14 @@
                 android:layout_marginEnd="15dp"
                 android:src="@drawable/pintucenah" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/cart"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
                 android:layout_gravity="end"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/user" />
+                android:src="@drawable/user"
+                android:clickable="true"/>
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
