@@ -1,6 +1,7 @@
 package com.example.peaceminusone
 
 import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.transition.TransitionManager
@@ -29,6 +30,9 @@ class HomeScreen : AppCompatActivity(), View.OnClickListener {
 
         val about: ImageButton = findViewById(R.id.button_about_us)
         about.setOnClickListener(this)
+
+        val account: ImageButton = findViewById(R.id.cart)
+        account.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -59,6 +63,10 @@ class HomeScreen : AppCompatActivity(), View.OnClickListener {
             }
             R.id.button_about_us -> {
                 val signInIntent = Intent(this@HomeScreen, AboutusActivity::class.java)
+                startActivity(signInIntent)
+            }
+            R.id.cart -> {
+                val signInIntent = Intent(this@HomeScreen, ProfileActivity::class.java)
                 startActivity(signInIntent)
             }
         }

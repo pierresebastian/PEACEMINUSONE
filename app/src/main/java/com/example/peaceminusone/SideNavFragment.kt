@@ -26,8 +26,6 @@ class SideNavFragment : Fragment(), View.OnClickListener {
         val backToMain: ImageView = view.findViewById(R.id.close_side_nav)
         backToMain.setOnClickListener(this)
 
-        val goToHomeScreen: LinearLayout = view.findViewById(R.id.home)
-        goToHomeScreen.setOnClickListener(this)
 
         val goToMenu: LinearLayout = view.findViewById(R.id.menu_side)
         goToMenu.setOnClickListener(this)
@@ -43,10 +41,6 @@ class SideNavFragment : Fragment(), View.OnClickListener {
         when(v.id){
             R.id.close_side_nav -> {
                 activity?.onBackPressed()
-            }
-            R.id.home -> {
-                val intentHomeScreen = Intent (activity, HomeScreen::class.java)
-                activity?.startActivity(intentHomeScreen)
             }
             R.id.menu_side -> {
                 val intentNav = Intent (activity, HomeScreen::class.java)
